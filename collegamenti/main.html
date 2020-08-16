@@ -1,0 +1,312 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle"></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/c8963842c9.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Poppins:ital,wght@0,400;1,200&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script src="./../js/CambioPagina.js"></script>
+    <link rel="stylesheet" href="./../css/main.css">
+</head>
+<body onload="pageCaricata()" style="height: auto;">
+    <div class="container-flex" style="min-height: 500px;height: auto;">
+        <nav class="navbar navbar-light bg-light" style="padding-left: 8%;padding-right: 8%;width: 100%;">
+            <a class="navbar-brand" href="./../index.html" style="width: 150px;padding-top: 20px;">
+                <img src="./img/t1logo.png" onclick="sessionStorage.setItem('statoPag','home')" alt="logo" id="logo" style="cursor: pointer;">
+            </a>
+            <div style="padding-top: 30px;">
+                <ul >
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(0)"></i>Home</a></li>
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(1)"></i>Chi siamo</a></li>
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(2)"></i>Galleria</a></li>
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(3)">Contatti</a></li>
+                    <div class="aPersonale">
+                        <li><a class="nav-item nav-link collegamenti d-none d-sm-none d-md-none d-lg-none d-xl-block" id="areaP" href="#" onclick="cambio(4)">Area Personale</a></li>
+                    </div>
+                    <div class="contenitoreAccedi">
+                        <a type="button" class="btn btn-outline-dark d-none d-sm-none d-md-none d-lg-none d-xl-inline-block ml-4 accedi" style="height: 30%;border-radius: 0;" href="./accedi.html">Accedi</a>
+                    </div>
+                </ul>   
+                <i class="fas fa-bars menuIcon" onclick="menu()"></i>
+            </div>
+        </nav>
+        <div class="d-flex align-items-center justify-content-center bg-dark menuContenitore" style="height: .5vh;width: 100%; overflow: hidden;;">
+            <div id="menuFont">
+                <div class="row-12 mb-4">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(0)"><i class="fas fa-home mr-2"></i> Home</a>
+                </div>  
+                <div class="row-12 mb-4">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(1)"><i class="fas fa-users mr-2"></i> Chi siamo</a>
+                </div> 
+                <div class="row-12 mb-4">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(2)"><i class="far fa-images mr-2"></i> Galleria</a>
+                </div> 
+                <div class="row-12 mb-5">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(3)"><i class="far fa-address-book mr-2"></i> Contatti</a>
+                </div> 
+                <div class="row-12">
+                    <div id="aPersonale">
+                        <a class="collegamentiMenu"  href="#" onclick="cambio(4)"><i class="far fa-user mr-2"></i> Area Personale</a>
+                    </div>
+                </div> 
+                <div id="contenitoreAccedi" class="w-100">
+                    <a type="button" class="btn btn-outline-light  w-100 accedi" href="./accedi.html">Accedi</a>
+                </div>
+            </div>       
+        </div>
+        <div id="loader"></div>
+        <div class="mt-5 divErrore" id="animate-bottom">
+            <b><p id="textErrore" class="w-100 d-flex justify-content-center text-center" style="padding-left: 20%;padding-right: 20%;">Ci dispiace...però la destinazione da te richiesta non è ancora disponibile</p></b>
+            <div class="w-100 d-flex justify-content-center" >
+                <img src="./img/error.svg" class="col-xl-5 col-lg-5 col-md-6" alt="">
+            </div>
+            <div class="w-100 d-flex justify-content-center">
+                <a href="./esplora.html" onclick="sessionStorage.setItem('statoPag','esplora')" class="btn btn-light mt-4">Nuova Ricerca</a>
+            </div>
+        </div>
+        <div  class="mainDiv">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 d-xl-inline-block d-lg-inline-block d-none divOrdina" style="vertical-align: top;">
+                <h4 class="mb-3"><b>Biglietti Trovati:</b></h4>
+                <a href="./esplora.html" onclick="sessionStorage.setItem('statoPag','esplora')" class="btn btn-light mt-4">Nuova Ricerca</a>
+            </div>
+            
+            <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-8 soloAndataDiv">
+                <div class="card mb-3 cardA" id="animate-bottom">
+                    <div class="card-body">
+                        <div>
+                            <strong><h5 class="card-title d-inline-block titoloBigliettoA"></h5></strong>
+                            <span class="badge badge-success d-inline-block  float-right stopBigliettoA"></span>
+                        </div>
+                      <h6 class="card-subtitle mb-2 text-muted dataBigliettoA"></h6>
+                        <div class="p-2 w-100 position-relative">
+                            <span class="d-inline-block" >
+                                <span class="oraParBigliettoA"></span>
+                                <strong><div class="postoParBigliettoA"></div></strong>
+                            </span> 
+                            <span class="d-inline-block" style="margin-left:35%"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+                            <span class="d-inline-block" style="float: right;">
+                                <span class="oraArrivoBigliettoA"></span>
+                                <strong><div class="postoArrivoBigliettoA"></div></strong>
+                            </span>
+                        </div>
+                      <button type="button" class="btn btn-warning mt-3" onclick="acquista()">Acquista</button>
+                      <span class="float-right mt-3 prezzoBigliettoA"></span>
+                    </div>
+                </div>
+                <div class="card mb-3 cardA" id="animate-bottom1">
+                    <div class="card-body">
+                        <div>
+                            <strong><h5 class="card-title d-inline-block titoloBigliettoA"></h5></strong>
+                            <span class="badge badge-success d-inline-block  float-right stopBigliettoA"></span>
+                        </div>
+                      <h6 class="card-subtitle mb-2 text-muted dataBigliettoA"></h6>
+                        <div class="p-2 w-100 position-relative">
+                            <span class="d-inline-block" >
+                                <span class="oraParBigliettoA"></span>
+                                <strong><div class="postoParBigliettoA"></div></strong>
+                            </span> 
+                            <span class="d-inline-block" style="margin-left:35%"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+                            <span class="d-inline-block" style="float: right;">
+                                <span class="oraArrivoBigliettoA"></span>
+                                <strong><div class="postoArrivoBigliettoA"></div></strong>
+                            </span>
+                        </div>
+                        <button type="button" class="btn btn-warning mt-3" onclick="acquista()">Acquista</button>
+                        <span class="float-right mt-3 prezzoBigliettoA"></span>
+                    </div>
+                </div>
+                <div class="card mb-3 cardA" id="animate-bottom2"> 
+                    <div class="card-body">
+                        <div>
+                            <strong><h5 class="card-title d-inline-block titoloBigliettoA"></h5></strong>
+                            <span class="badge badge-success d-inline-block  float-right stopBigliettoA"></span>
+                        </div>
+                      <h6 class="card-subtitle mb-2 text-muted dataBigliettoA"></h6>
+                        <div class="p-2 w-100 position-relative">
+                            <span class="d-inline-block" >
+                                <span class="oraParBigliettoA"></span>
+                                <strong><div class="postoParBigliettoA"></div></strong>
+                            </span> 
+                            <span class="d-inline-block" style="margin-left:35%"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+                            <span class="d-inline-block" style="float: right;">
+                                <span class="oraArrivoBigliettoA"></span>
+                                <strong><div class="postoArrivoBigliettoA"></div></strong>
+                            </span>
+                        </div>
+                        <button type="button" class="btn btn-warning mt-3" onclick="acquista()">Acquista</button>
+                        <span class="float-right mt-3 prezzoBigliettoA"></span>
+                    </div>
+                </div>
+                <div class="card mb-3 cardA" id="animate-bottom3">
+                    <div class="card-body">
+                        <div>
+                            <strong><h5 class="card-title d-inline-block titoloBigliettoA"></h5></strong>
+                            <span class="badge badge-success d-inline-block  float-right stopBigliettoA"></span>
+                        </div>
+                      <h6 class="card-subtitle mb-2 text-muted dataBigliettoA"></h6>
+                        <div class="p-2 w-100 position-relative">
+                            <span class="d-inline-block" >
+                                <span class="oraParBigliettoA"></span>
+                                <strong><div class="postoParBigliettoA"></div></strong>
+                            </span> 
+                            <span class="d-inline-block" style="margin-left:35%"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+                            <span class="d-inline-block" style="float: right;">
+                                <span class="oraArrivoBigliettoA"></span>
+                                <strong><div class="postoArrivoBigliettoA"></div></strong>
+                            </span>
+                        </div>
+                        <button type="button" class="btn btn-warning mt-3" onclick="acquista()">Acquista</button>
+                        <span class="float-right mt-3 prezzoBigliettoA"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-8 andataRitornoDiv" >
+                <div class="card mb-3 cardAR" id="animate-bottom">
+                    <div class="card-body">
+                        <div>
+                            <h5 class="card-title d-inline-block titoloBigliettoAR"></h5>
+                            <span class="badge badge-success d-inline-block  float-right stopBigliettoAR"></span>
+                        </div>
+                      <h6 class="card-subtitle mb-2 text-muted dataBigliettoAR"></h6>
+                        <div class="p-2 w-100 position-relative">
+                            <span class="d-inline-block" >
+                                <span class="oraParBiglietto1AR"></span>
+                                <strong><div class="postoParBiglietto1AR"></div></strong>
+                            </span> 
+                            <span class="d-inline-block" style="margin-left:35%"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+                            <span class="d-inline-block" style="float: right;">
+                                <span class="oraArrivoBiglietto1AR"></span>
+                                <strong><div class="postoArrivoBiglietto1AR"></div></strong>
+                            </span>
+                        </div>
+                        <h6 class="card-subtitle mb-2 mt-1 text-muted dataRitBigliettoAR"></h6>
+                        <div class="p-2 w-100 position-relative">
+                            <span class="d-inline-block" >
+                                <span class="oraParBiglietto2AR"></span>
+                                <strong><div class="postoParBiglietto2AR"></div></strong>
+                            </span> 
+                            <span class="d-inline-block" style="margin-left:35%"><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+                            <span class="d-inline-block" style="float: right;">
+                                <span class="oraArrivoBiglietto2AR"></span>
+                                <strong><div class="postoArrivoBiglietto2AR"></div></strong>
+                            </span>
+                        </div>
+                        <button type="button" class="btn btn-warning mt-3" onclick="acquista()">Acquista</button>
+                        <span class="float-right mt-3 prezzoBigliettoAR"></span>
+                    </div>
+                </div>
+                <div class="card mb-3 cardAR" id="animate-bottom1">
+                    <div class="card-body">
+                        <div>
+                            <h5 class="card-title d-inline-block titoloBigliettoAR"></h5>
+                            <span class="badge badge-success d-inline-block  float-right stopBigliettoAR"></span>
+                        </div>
+                      <h6 class="card-subtitle mb-2 text-muted dataBigliettoAR"></h6>
+                        <div class="p-2 w-100 position-relative">
+                            <span class="d-inline-block" >
+                                <span class="oraParBiglietto1AR"></span>
+                                <strong><div class="postoParBiglietto1AR"></div></strong>
+                            </span> 
+                            <span class="d-inline-block" style="margin-left:35%"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+                            <span class="d-inline-block" style="float: right;">
+                                <span class="oraArrivoBiglietto1AR"></span>
+                                <strong><div class="postoArrivoBiglietto1AR"></div></strong>
+                            </span>
+                        </div>
+                        <h6 class="card-subtitle mb-2 mt-1 text-muted dataRitBigliettoAR"></h6>
+                        <div class="p-2 w-100 position-relative">
+                            <span class="d-inline-block" >
+                                <span class="oraParBiglietto2AR"></span>
+                                <strong><div class="postoParBiglietto2AR"></div></strong>
+                            </span> 
+                            <span class="d-inline-block" style="margin-left:35%"><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+                            <span class="d-inline-block" style="float: right;">
+                                <span class="oraArrivoBiglietto2AR"></span>
+                                <strong><div class="postoArrivoBiglietto2AR"></div></strong>
+                            </span>
+                        </div>
+                        <button type="button" class="btn btn-warning mt-3" onclick="acquista()">Acquista</button>
+                        <span class="float-right mt-3 prezzoBigliettoAR"></span>
+                    </div>
+                </div>
+                <div class="card mb-3 cardAR" id="animate-bottom2">
+                    <div class="card-body">
+                        <div>
+                            <h5 class="card-title d-inline-block titoloBigliettoAR"></h5>
+                            <span class="badge badge-success d-inline-block  float-right stopBigliettoAR"></span>
+                        </div>
+                      <h6 class="card-subtitle mb-2 text-muted dataBigliettoAR"></h6>
+                        <div class="p-2 w-100 position-relative">
+                            <span class="d-inline-block" >
+                                <span class="oraParBiglietto1AR"></span>
+                                <strong><div class="postoParBiglietto1AR"></div></strong>
+                            </span> 
+                            <span class="d-inline-block" style="margin-left:35%"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+                            <span class="d-inline-block" style="float: right;">
+                                <span class="oraArrivoBiglietto1AR"></span>
+                                <strong><div class="postoArrivoBiglietto1AR"></div></strong>
+                            </span>
+                        </div>
+                        <h6 class="card-subtitle mb-2 mt-1 text-muted dataRitBigliettoAR"></h6>
+                        <div class="p-2 w-100 position-relative">
+                            <span class="d-inline-block" >
+                                <span class="oraParBiglietto2AR"></span>
+                                <strong><div class="postoParBiglietto2AR"></div></strong>
+                            </span> 
+                            <span class="d-inline-block" style="margin-left:35%"><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+                            <span class="d-inline-block" style="float: right;">
+                                <span class="oraArrivoBiglietto2AR"></span>
+                                <strong><div class="postoArrivoBiglietto2AR"></div></strong>
+                            </span>
+                        </div>
+                        <button type="button" class="btn btn-warning mt-3" onclick="acquista()">Acquista</button>
+                        <span class="float-right mt-3 prezzoBigliettoAR"></span>
+                    </div>
+                </div>
+                <div class="card mb-3 cardAR" id="animate-bottom3">
+                    <div class="card-body">
+                        <div>
+                            <h5 class="card-title d-inline-block titoloBigliettoAR"></h5>
+                            <span class="badge badge-success d-inline-block  float-right stopBigliettoAR"></span>
+                        </div>
+                      <h6 class="card-subtitle mb-2 text-muted dataBigliettoAR"></h6>
+                        <div class="p-2 w-100 position-relative">
+                            <span class="d-inline-block" >
+                                <span class="oraParBiglietto1AR"></span>
+                                <strong><div class="postoParBiglietto1AR"></div></strong>
+                            </span> 
+                            <span class="d-inline-block" style="margin-left:35%"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+                            <span class="d-inline-block" style="float: right;">
+                                <span class="oraArrivoBiglietto1AR"></span>
+                                <strong><div class="postoArrivoBiglietto1AR"></div></strong>
+                            </span>
+                        </div>
+                        <h6 class="card-subtitle mb-2 mt-1 text-muted dataRitBigliettoAR"></h6>
+                        <div class="p-2 w-100 position-relative">
+                            <span class="d-inline-block" >
+                                <span class="oraParBiglietto2AR"></span>
+                                <strong><div class="postoParBiglietto2AR"></div></strong>
+                            </span> 
+                            <span class="d-inline-block" style="margin-left:35%"><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+                            <span class="d-inline-block" style="float: right;">
+                                <span class="oraArrivoBiglietto2AR"></span>
+                                <strong><div class="postoArrivoBiglietto2AR"></div></strong>
+                            </span>
+                        </div>
+                        <button type="button" class="btn btn-warning mt-3" onclick="acquista()">Acquista</button>
+                        <span class="float-right mt-3 prezzoBigliettoAR"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-copyright text-center text-black-50 py-3 myFoot" style="bottom:0">© 2020 Copyright: pal's Travels</div>
+        </footer>
+    </div>
+    <script src="./../js/main.js"></script>
+    <script src="./../js/Notifier.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

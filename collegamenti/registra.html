@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registra · Pal's Travels</title>
+    <script src="./../js/jquery-1.11.1.min.js"></script>
+    <script src="./../js/registra.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Poppins:ital,wght@0,400;1,200&display=swap" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c8963842c9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./../css/registraAccedi.css">
+</head>
+<body>
+    <div class="container-flex position-relative" style="width: 100%;height: 100vh;">
+        <div class="d-none d-sm-none d-md-none d-lg-block d-xl-block h-100 w-25 position-absolute imgDiv">
+            <div class="d-flex align-items-center w-100" style="top: 0;left: 0;height: 15%;">
+                <a href="./../index.html"><img onclick="sessionStorage.setItem('statoPag','home')" src="./img/t1logo.png" alt="logo" style="opacity: 1 !important;"></a>
+            </div>
+        </div>
+        <div class="bg-white divContent" style="height: 100%;">
+            <div class="float-right d-flex align-items-center position-absolute" style="height: 15%;right: 0;">
+                <div class="mr-3">
+                    <p class="d-inline-block">Possiedi gia un Account?</p>
+                    <a type="button" class="btn btn-outline-dark d-inline-block ml-4 accedi" style="height: 30%;border-radius: 0;" href="./accedi.html">Accedi</a>
+                </div>
+            </div>
+            <div class=" position-absolute path" style="left: 0;bottom: 0;">
+                <div class="ml-3">
+                      <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="./../index.html" onclick="sessionStorage.setItem('statoPag','home')">Home</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Registra</li>
+                        </ol>
+                      </nav>
+                </div>
+            </div>
+            <div class="d-flex h-100 justify-content-center d-flex align-items-center">
+                <div class="bg-white pt-4 pb-4 pl-3 mainContainer">
+                    <div class="d-flex justify-content-center w-100" style="top: 0;margin-bottom: 20px;">
+                        <div class="alert alert-danger" role="alert"></div>
+                    </div>
+                    <div  id="mainContente">
+                        <div class="h4" style=" font-family: 'Galada', cursive;">Registra...</div>
+                    </div>
+                    <div class="mb-0 mb-sm-0 mb-md-2 mb-lg-2 mb-xl-2 d-inline-block form" style="width: 45%;margin-right: 4%;">
+                        <input id="nome" type="text" name="text" autocomplete="off" required class="inputs" style="text-transform: capitalize;" maxlength="8"/>
+                        <label for="text" class="label-name">
+                            <span class="content-name">Nome</span>
+                        </label>
+                    </div>
+                    <div class="mb-0 mb-sm-0 mb-md-2 mb-lg-2 mb-xl-2 d-inline-block form" style="width: 45%;">
+                        <input id="cognome" type="text" name="text" autocomplete="off" required class="inputs" style="text-transform: capitalize;" maxlength="10"/>
+                        <label for="text" class="label-name">
+                            <span class="content-name">Cognome</span>
+                        </label>
+                    </div>
+                    <div class="mb-0 mb-sm-0 mb-md-2 mb-lg-2 mb-xl-2 form">
+                        <input type="text" name="text" autocomplete="off" required class="inputs" />
+                        <label for="text" class="label-name">
+                            <span class="content-name">Email</span>
+                        </label>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="mb-3 mb-sm-3 mb-md-4 mb-lg-4 mb-xl-4  form">
+                        <input type="password" name="text" autocomplete="off" required class="inputs" maxlength="21"/>
+                        <label for="text" class="label-name">
+                            <span class="content-name">Password</span>
+                        </label>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="mb-0 mb-sm-0 mb-md-3 mb-lg-3 mb-xl-3  form">
+                        <i class="fas fa-male" style="cursor: pointer;font-size: 25px;" onclick="sesso('m')"></i>
+                        <i class="fas fa-female ml-4" style="cursor: pointer;font-size: 25px;" onclick="sesso('f')"></i>
+                    </div>
+                    <div class="mb-1 mb-sm-1 mb-md-2 mb-lg-2 mb-xl-2">
+                        <label class="checkbox path w-100">
+                            <input type="checkbox" id="mioCheck" class="d-inline-flex mr-2">ricordami per sempre
+                            <svg viewBox="0 0 21 21">
+                                <path d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186"></path>
+                            </svg>
+                        </label>                       
+                    </div>
+                    <a class="btn btn-success" onclick="registraMi()">Registrami</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./../js/Notifier.min.js"></script>
+</body>
+</html>

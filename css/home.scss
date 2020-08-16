@@ -1,0 +1,659 @@
+@import "bootstrap-4.0.0/scss/_functions.scss";
+@import "bootstrap-4.0.0/scss/_variables.scss";
+@import "bootstrap-4.0.0/scss/mixins/_breakpoints.scss";
+
+
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  outline: none;
+  cursor: default;
+}
+
+#accediFooter, #areaPersonaleFooter{
+  color: #0a85fa;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.starterBg{
+  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  height: 100vh;
+  min-height: 80vh;
+  background-size: 600% 600%;
+  animation: gradient-anime 25s ease infinite;
+}
+
+nav{
+  box-shadow: 0px -5px 40px 0px rgba(51,51,51,1);
+}
+
+#cityImg1{
+  clip-path: polygon(28% 8%, 84% 2%, 75% 100%, 0 67%); 
+  height: auto;
+  max-width: 100%;
+  transition: clip-path .5s ease; 
+  &:hover{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }         
+}
+
+#cityImg2{
+  clip-path: polygon(26% 19%, 90% 6%, 77% 93%, 4% 74%);
+  height: auto;
+  max-width: 100%;
+  transition: clip-path .5s ease;
+  &:hover{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }          
+}
+
+#cityImg3{
+  clip-path: polygon(24% 4%, 80% 43%, 90% 88%, 12% 91%);
+  height: auto;
+  max-width: 100%;
+  transition: clip-path .5s ease;
+  &:hover{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }        
+}
+
+ul { 
+  list-style: none; 
+  display: table;
+  text-align: center;
+}
+li { 
+  display: table-cell; 
+  position: relative; 
+}
+.collegamenti {
+  color: #333333;
+  text-decoration: none;
+  position: relative;
+  font-size: 17px;
+  cursor: pointer;
+  &::after{
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #333333;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+
+  }
+  &:hover::after{
+    width: 100%; 
+    left: 0; 
+  }
+}
+
+#areaP{
+  margin-left: 30px;
+}
+
+.menuIcon{
+  font-size: 2rem;
+  padding-bottom: 40px;
+}
+
+.mainText{
+  font-family: 'Galada', cursive;
+}
+
+#typed{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  color: white;
+  display: inline;
+  font-size: .6em;
+}
+
+.typed-cursor {
+  font-size: 40px;
+  color: #333333;
+}
+
+#mainDiv{
+  margin-top: 100px;
+}
+.esplora {
+  border: 0 solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, .5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  margin-top:90px;
+  text-align: center;
+} 
+.esplora:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388; 
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.registra {
+  background-color: #dfb55d;
+  border: none;
+  color: #FFFFFF;
+  padding:14px 20px;
+  text-align: center;
+  transition: all 0.5s;
+  margin-top:90px;
+  text-decoration: none !important;
+  cursor: pointer;
+  &:hover{
+    background-color: white;
+    color:#dfb55d;
+  }
+} 
+
+
+
+#scorri {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  color: white;
+  text-decoration: none;
+  margin-top: 0;
+  font-size: 20px;
+  animation: opa-1 .5s forwards;
+  animation-delay: 1.5s;
+  opacity: 0; 
+  display: block;
+  text-align: center;
+  margin-top: 240px;
+  cursor: pointer !important;
+}
+
+.titolo{
+  position: relative;
+  transition: all 1s ease-in-out;
+  font-family: 'Galada', cursive;
+  &::after{
+      content:'';
+      width: 100px;
+      border: solid 1px;
+      position: absolute;
+      bottom: 15px;
+      right: -110px;
+  }
+  &::before{
+    content:'';
+    width: 100px;
+    border: solid 1px;
+    position: absolute;
+    bottom: 15px;
+    left: -110px;
+  }
+}
+
+.bandiera{
+  width: 50px;  
+}
+.menuContenitore{
+  transition: all 1s ease-in-out;
+}
+
+.scontoText{
+  color: #333333;
+  background-color: #dfb55d;
+}
+
+.btnEstate{
+  border: none;
+  background-color: white;
+  color: #dfb55d;
+  border-radius: 20px;
+  text-decoration: none !important;
+  transition: transform .5s ease-in-out;
+  cursor: pointer;
+  &:hover{
+    transform: scale(1.1);
+    background-color: #333333 !important;
+    color: white !important;
+    cursor: pointer !important;
+  }
+}
+
+@keyframes scroll {
+  from {
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      opacity: 1;
+  }
+  to {
+      -webkit-transform: translateY(50px);
+              transform: translateY(50px);
+      opacity: 0;
+  }
+}
+
+@keyframes gradient-anime {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.arrow {
+  font-size: 30px;
+  animation: scroll 3s ease infinite;
+}
+
+.aPersonale{
+  display: none;
+}
+
+html {
+  font-size: 1rem;
+}
+
+@include media-breakpoint-up(xs) {
+  html {
+    font-size: 0.8rem;
+  }
+  .collegamenti{
+    display: none;
+  }  
+  .menuIcon{
+    display: block;
+  }
+  #logo{
+    width: 150px;
+  }
+  .mainText{
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  #typed{
+    font-weight: 200;
+    font-size: 0.6em;
+  }
+  .typed-cursor {
+    font-size: 0.6em;
+  }
+  .esplora{
+    font-size: 15px;
+    text-align: center;
+    padding:14px 15px;
+    width: 80px;
+  }
+  .registra{
+    width: 130px;
+    font-size: 15px;
+  }
+  .twoBtn{
+    margin-top: -10px;
+  }
+  .titolo{
+    &::after{
+      content: none;
+    }
+    &::before{
+      content: none;
+    }
+  }
+  #cityImg1{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);        
+  }
+  
+  #cityImg2{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);          
+  }
+  
+  #cityImg3{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);       
+  }
+  .menuContenitore{
+    display: block;
+  }
+  #menuFont{
+    font-size: 15px;
+  }
+  .scontoText{
+    font-size: 12px;
+  }
+  .btnEstate{
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+}
+
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1rem;
+  }
+  .collegamenti{
+    display: none;
+  } 
+  .menuIcon{
+    display: block;
+  }
+  #logo{
+    width: 180px;
+  }
+  .mainText{
+    font-family: 'Galada', cursive;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  #typed{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    color: white;
+    display: inline;
+    font-size: 0.75em;
+  }
+  .typed-cursor {
+    font-size: 0.75em;
+  }
+  .esplora{
+    font-size: 20px;
+    text-align: center;
+    padding:14px 15px;
+    width: 125px;
+  }
+  .registra{
+    width: 220px;
+    font-size: 20px;
+  }
+  .twoBtn{
+    margin-top: 50px;
+  }
+  #mainDiv{
+    margin-top: 160px;
+  }
+  .titolo{
+    &::after{
+      content: none;
+    }
+    &::before{
+      content: none;
+    }
+  }
+  #cityImg1{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);        
+  }
+  
+  #cityImg2{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);          
+  }
+  
+  #cityImg3{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);       
+  }
+  .menuContenitore{
+    display: block;
+  }
+  #menuFont{
+    font-size: 20px;
+  }
+  .scontoText{
+    font-size: 18px;
+  }
+  .btnEstate{
+    font-size: 10px;
+    padding: 8px 14px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.1rem;
+  }
+  .collegamenti{
+    display: none;
+  }
+  .menuIcon{
+    display: block;
+  }
+  #logo{
+    width: 200px;
+  }
+  .mainText{
+    font-size: 2.3em;
+  }
+  
+  #typed{
+    font-size: 0.85em;
+  }
+  
+  .typed-cursor {
+    font-size: 0.85em;
+  }
+  
+  #mainDiv{
+    margin-top: 200px;
+  }
+  .esplora{
+    font-size: 20px;
+    padding: 14 28px;
+    width: 120px;
+  }
+  .registra{
+    width: 230px;
+  }
+  .registra span{
+    font-size: 20px;
+  }
+  .twoBtn{
+    margin-top: 60px;
+  }
+  .titolo{
+    &::after{
+      content: none;
+    }
+    &::before{
+      content: none;
+    }
+  }
+  #cityImg1{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);        
+  }
+  
+  #cityImg2{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);          
+  }
+  
+  #cityImg3{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);       
+  }
+  .paraImg{
+    font-size: 18px;
+  }
+  .nomecitta{
+    font-size: 18px;
+  }
+  .menuContenitore{
+    display: block;
+  }
+  #menuFont{
+    font-size: 20px;
+  }
+  .scontoText{
+    font-size: 25px;
+  }
+  .btnEstate{
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.2rem;
+  }
+  .collegamenti{
+    display: none;
+  }
+  .menuIcon{
+    display: block;
+  }
+  #logo{
+    width: 200px;
+  }
+  .mainText{
+    font-size: 2em;
+  }
+  
+  #typed{
+    font-size: 0.6em;
+  }
+  
+  .typed-cursor {
+    font-size: 0.6em;
+  }
+  
+  #mainDiv{
+    margin-top: 100px;
+  }
+  .esplora{
+    width: 120px;
+  }
+  .registra{
+    width: 190px;
+  }
+  .titolo{
+    &::after{
+      content: '';
+    }
+    &::before{
+      content: '';
+    }
+  }
+  #cityImg1{
+    clip-path: polygon(28% 8%, 84% 2%, 75% 100%, 0 67%);          
+  }
+  
+  #cityImg2{
+    clip-path: polygon(26% 19%, 90% 6%, 77% 93%, 4% 74%);
+  }
+  
+  #cityImg3{
+    clip-path: polygon(24% 4%, 80% 43%, 90% 88%, 12% 91%);
+  }
+  .paraImg{
+    font-size: 18px;
+  }
+  .nomecitta{
+    font-size: 18px;
+  }
+  .menuContenitore{
+    display: none;
+  }
+  .scontoText{
+    font-size: 15px;
+  }
+  
+  .btnEstate{
+    font-size: 15px;
+  }
+  .scontoText{
+    font-size: 25px;
+  }
+  .btnEstate{
+    font-size: 12px;
+    padding: 12px 24px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  html {
+    font-size: 1.2rem;
+  }
+  .collegamenti{
+    display: block;
+  }
+  .menuIcon{
+    display: none;
+  }
+  #logo{
+    width: 200px;
+  }
+  .mainText{
+    font-size: 2em;
+  }
+  
+  #typed{
+    font-size: 0.7em;
+  }
+  
+  .typed-cursor {
+    font-size: 0.7em;
+  }
+  
+  #mainDiv{
+    margin-top: 80px;
+  }
+
+  .esplora{
+    width: 130px;
+  }
+  .registra{
+    width: 200px;
+  }
+  .twoBtn{
+    margin-top:10px;
+  }
+  .titolo{
+    &::after{
+      content: '';
+    }
+    &::before{
+      content: '';
+    }
+  }
+  #cityImg1{
+    clip-path: polygon(28% 8%, 84% 2%, 75% 100%, 0 67%);          
+  }
+  
+  #cityImg2{
+    clip-path: polygon(26% 19%, 90% 6%, 77% 93%, 4% 74%);
+  }
+  
+  #cityImg3{
+    clip-path: polygon(24% 4%, 80% 43%, 90% 88%, 12% 91%);
+  }
+  .paraImg{
+    font-size: 16px;
+  }
+  .nomecitta{
+    font-size: 18px;
+  }
+  .menuContenitore{
+    display: none;
+  }
+  .scontoText{
+    font-size: 35px;
+  }
+  
+  .btnEstate{
+    font-size: 15px;
+  }
+}

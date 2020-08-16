@@ -1,0 +1,255 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Poppins:ital,wght@0,400;1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/c8963842c9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./../css/galleria.css">
+    <script src="./../js/CambioPagina.js"></script>
+    <title>Pal's Travels · Galleria</title>
+</head>
+<body onload="pageCaricata()">
+  <div class="bigImgDiv" >
+    <div class="card-img-overlay ">
+      <h5 class="bImgTitle" style="position: absolute;"></h5>
+    </div>
+    <i class="fas fa-window-close close" onclick="chiudiBigImg()" style="top: 10px;right: 10px;position: absolute;font-size: 40px;"></i>
+    <i class="fas fa-chevron-left arrowB" onclick="indietroImg()" style="left: 50px;position: absolute;font-size: 40px;top: 45%;"></i>
+    <i class="fas fa-chevron-right arrowF" onclick="avantiImg()" style="right: 50px;position: absolute;font-size: 40px;top: 45%;"></i>
+    <img class="card-img bImg">
+  </div>
+  <div class="container-flex starterBg" style="height: auto;min-height: 100vh;">
+      <nav class="navbar navbar-light bg-light" style="padding-left: 8%;padding-right: 8%;width: 100%;">
+          <a class="navbar-brand" href="./../index.html" style="width: 150px;padding-top: 20px;">
+              <img onclick="sessionStorage.setItem('statoPag','home')" src="./img/t1logo.png" alt="logo" id="logo" style="cursor: pointer;">
+          </a>
+          <div style="padding-top: 30px;">
+              <ul >
+                  <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(0)"></i>Home</a></li>
+                  <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(1)"></i>Chi siamo</a></li>
+                  <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(2)"></i>Galleria</a></li>
+                  <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(3)">Contatti</a></li>
+                  <div class="aPersonale">
+                      <li><a class="nav-item nav-link collegamenti d-none d-sm-none d-md-none d-lg-none d-xl-block" id="areaP" href="#" onclick="cambio(4)">Area Personale</a></li>
+                  </div>
+                  <div class="contenitoreAccedi">
+                      <a type="button" class="btn btn-outline-dark d-none d-sm-none d-md-none d-lg-none d-xl-inline-block ml-4 accedi" style="height: 30%;border-radius: 0;" href="./accedi.html">Accedi</a>
+                  </div>
+              </ul>   
+              <i class="fas fa-bars menuIcon" onclick="menu()"></i>
+          </div>
+      </nav>
+      <div class="d-flex align-items-center justify-content-center bg-dark menuContenitore" style="height: .5vh;width: 100%; overflow: hidden;;">
+          <div id="menuFont">
+              <div class="row-12 mb-4">
+                  <a class="collegamentiMenu"  href="#" onclick="cambio(0)"><i class="fas fa-home mr-2"></i> Home</a>
+              </div>  
+              <div class="row-12 mb-4">
+                  <a class="collegamentiMenu"  href="#" onclick="cambio(1)"><i class="fas fa-users mr-2"></i> Chi siamo</a>
+              </div> 
+              <div class="row-12 mb-4">
+                  <a class="collegamentiMenu"  href="#" onclick="cambio(2)"><i class="far fa-images mr-2"></i> Galleria</a>
+              </div> 
+              <div class="row-12 mb-5">
+                  <a class="collegamentiMenu"  href="#" onclick="cambio(3)"><i class="far fa-address-book mr-2"></i> Contatti</a>
+              </div> 
+              <div class="row-12">
+                  <div id="aPersonale">
+                      <a class="collegamentiMenu"  href="#" onclick="cambio(4)"><i class="far fa-user mr-2"></i> Area Personale</a>
+                  </div>
+              </div> 
+              <div id="contenitoreAccedi" class="w-100">
+                  <a type="button" class="btn btn-outline-light  w-100 accedi" href="./accedi.html">Accedi</a>
+              </div>
+          </div>       
+      </div>
+        <div style="padding-left: 16%;padding-right: 16%;" class="mt-3">
+            <!--Img Sezione 1-->
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                  <div class="card" style="overflow: hidden;">
+                    <img src="./img/imgGalleria/austria.jpg" class="card-img-top img" onclick="imgShower(0)" alt="Austria">
+                    <div class="card-body">
+                      <h5 class="card-title">Austria</h5>                     
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                    <div class="card" style="overflow: hidden;">
+                      <img src="./img/imgGalleria/brazile.jpg" class="card-img-top img" onclick="imgShower(1)" alt="Brazile">
+                      <div class="card-body">
+                        <h5 class="card-title">Brazile</h5>
+                        
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                    <div class="card" style="overflow: hidden;">
+                      <img src="./img/imgGalleria/canada.jpg" class="card-img-top img" onclick="imgShower(2)" alt="Canada">
+                      <div class="card-body">
+                        <h5 class="card-title">Canada</h5>
+                        
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                    <div class="card" style="overflow: hidden;">
+                      <img src="./img/imgGalleria/cina.jpg" class="card-img-top img" onclick="imgShower(3)" alt="Cina">
+                      <div class="card-body">
+                        <h5 class="card-title">Cina</h5>
+                        
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                    <div class="card" style="overflow: hidden;">
+                      <img src="./img/imgGalleria/colombia.jpg" class="card-img-top img" onclick="imgShower(4)" alt="Colombia">
+                      <div class="card-body">
+                        <h5 class="card-title">Colombia</h5>
+                        
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                    <div class="card" style="overflow: hidden;">
+                      <img src="./img/imgGalleria/egitto.jpg" class="card-img-top img" onclick="imgShower(5)" alt="Egitto">
+                      <div class="card-body">
+                        <h5 class="card-title">Egitto</h5>
+                        
+                      </div>
+                    </div>
+                </div>
+                <div class="divBtnCaricaImg1 w-100">
+                  <div class="d-flex justify-content-center w-100 mb-3">
+                      <button class="btnCarica" onclick="caricaImg(1)">Carica Altri</button>
+                  </div>
+                </div>
+            </div>
+            <!--Img Sezione 2-->
+            <div class="row sez2" style="display: none;">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                  <div class="card" style="overflow: hidden;">
+                    <img src="./img/imgGalleria/francia.jpg" class="card-img-top img" onclick="imgShower(6)" alt="Francia">
+                    <div class="card-body">
+                      <h5 class="card-title">Francia</h5>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                    <div class="card" style="overflow: hidden;">
+                      <img src="./img/imgGalleria/germania.jpg" class="card-img-top img" onclick="imgShower(7)" alt="Germania">
+                      <div class="card-body">
+                        <h5 class="card-title">Germania</h5>
+                        
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                    <div class="card" style="overflow: hidden;">
+                      <img src="./img/imgGalleria/grecia.jpg" class="card-img-top img" onclick="imgShower(8)" alt="Grecia">
+                      <div class="card-body">
+                        <h5 class="card-title">Grecia</h5>
+                        
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                    <div class="card" style="overflow: hidden;">
+                      <img src="./img/imgGalleria/india.jpg" class="card-img-top img" onclick="imgShower(9)" alt="India">
+                      <div class="card-body">
+                        <h5 class="card-title">India</h5>
+                        
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                    <div class="card" style="overflow: hidden;">
+                      <img src="./img/imgGalleria/inghilterra.jpg" class="card-img-top img" onclick="imgShower(10)" alt="Inghilterra">
+                      <div class="card-body">
+                        <h5 class="card-title">Inghilterra</h5>
+                        
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                    <div class="card" style="overflow: hidden;">
+                      <img src="./img/imgGalleria/giordania.jpg" class="card-img-top img" onclick="imgShower(11)" alt="Giordania">
+                      <div class="card-body">
+                        <h5 class="card-title">Giordania</h5>
+                        
+                      </div>
+                    </div>
+                </div>
+                <div class="divBtnCaricaImg2 w-100">
+                  <div class="d-flex justify-content-center w-100 mb-3">
+                      <button class="btnCarica" onclick="caricaImg(2)">Carica Altri</button>
+                  </div>
+                </div>
+            </div>
+            <!--Img Sezione 3-->
+            <div class="row sez3" style="display: none;">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                  <div class="card" style="overflow: hidden;">
+                    <img src="./img/imgGalleria/marocco.jpg" class="card-img-top img" onclick="imgShower(12)" alt="Marocco">
+                    <div class="card-body">
+                      <h5 class="card-title">Maracco</h5>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                    <div class="card" style="overflow: hidden;">
+                      <img src="./img/imgGalleria/polonia.jpg" class="card-img-top img" onclick="imgShower(13)" alt="Polonia">
+                      <div class="card-body">
+                        <h5 class="card-title">Polonia</h5>
+                        
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                    <div class="card" style="overflow: hidden;">
+                      <img src="./img/imgGalleria/russia.jpg" class="card-img-top img" onclick="imgShower(14)" alt="Russia">
+                      <div class="card-body">
+                        <h5 class="card-title">Russia</h5>
+                        
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                    <div class="card" style="overflow: hidden;">
+                      <img src="./img/imgGalleria/spagna.jpg" class="card-img-top img" onclick="imgShower(15)" alt="Spagna">
+                      <div class="card-body">
+                        <h5 class="card-title">Spagna</h5>
+                        
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                    <div class="card" style="overflow: hidden;">
+                      <img src="./img/imgGalleria/statiUniti.jpg" class="card-img-top img" onclick="imgShower(16)" alt="Stati Uniti">
+                      <div class="card-body">
+                        <h5 class="card-title">Stati Uniti</h5>
+                        
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                    <div class="card" style="overflow: hidden;">
+                      <img src="./img/imgGalleria/sudAfrica.jpg" class="card-img-top img" onclick="imgShower(17)" alt="Sud Africa">
+                      <div class="card-body">
+                        <h5 class="card-title">Sud Africa</h5>
+                        
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer font-small bg-dark mt-3" id="foot">
+      <div class="footer-copyright text-center text-white py-3">© 2020 Copyright: Pal's Travels</div>
+</footer>
+    <script src="./../js/galleria.js"></script>
+</body>
+</html>

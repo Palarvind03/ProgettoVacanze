@@ -1,0 +1,395 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  outline: none;
+  cursor: default;
+}
+
+.backG {
+  background-image: url(./../img/userPattern3.png);
+  -webkit-box-shadow: 0px 1px 29px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 1px 29px 2px rgba(0, 0, 0, 0.3);
+  background-repeat: repeat;
+}
+
+.mainImgContainer {
+  position: relative;
+  text-align: left;
+  color: white;
+}
+
+.mainTextDiv {
+  position: absolute;
+  bottom: 8px;
+  left: 15%;
+}
+
+.sezText {
+  font-size: 60px;
+  color: #333333;
+}
+
+ul {
+  list-style: none;
+  display: table;
+  text-align: center;
+}
+
+li {
+  display: table-cell;
+  position: relative;
+}
+
+.collegamenti {
+  color: #333333;
+  text-decoration: none;
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.collegamenti::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #333333;
+  -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.collegamenti:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+#areaP {
+  margin-left: 30px;
+}
+
+.menuIcon {
+  font-size: 2rem;
+  padding-bottom: 40px;
+}
+
+.titolo {
+  position: relative;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  font-family: 'Galada', cursive;
+}
+
+.titolo::after {
+  content: '';
+  width: 100px;
+  border: solid 1px;
+  position: absolute;
+  bottom: 15px;
+  right: -110px;
+}
+
+.titolo::before {
+  content: '';
+  width: 100px;
+  border: solid 1px;
+  position: absolute;
+  bottom: 15px;
+  left: -110px;
+}
+
+.aPersonale {
+  display: none;
+}
+
+.menuContenitore {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.userImgDiv {
+  background-size: 100% 100%;
+  -webkit-box-shadow: 0px 1px 29px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 1px 29px 2px rgba(0, 0, 0, 0.3);
+}
+
+.modifica {
+  display: none;
+}
+
+html {
+  font-size: 1rem;
+}
+
+html {
+  font-size: 0.8rem;
+}
+
+.collegamenti {
+  display: none;
+}
+
+.menuIcon {
+  display: block;
+}
+
+#logo {
+  width: 150px;
+}
+
+.titolo::after {
+  content: none;
+}
+
+.titolo::before {
+  content: none;
+}
+
+.menuContenitore {
+  display: block;
+}
+
+.menuFont {
+  font-size: 15px;
+}
+
+.sezText {
+  font-size: 30px;
+}
+
+.userImgDiv {
+  height: 140px;
+  width: 140px;
+}
+
+.benvenutoU {
+  font-size: 20px;
+  padding-top: 15px;
+}
+
+.mainContentDiv {
+  margin-top: -6%;
+}
+
+.infoCont {
+  background-color: none;
+  color: white;
+  padding: 30px 20px;
+  padding-left: 16%;
+  padding-right: 16%;
+}
+
+.btn-danger {
+  margin-right: 16%;
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: 1rem;
+  }
+  .collegamenti {
+    display: none;
+  }
+  .menuIcon {
+    display: block;
+  }
+  #logo {
+    width: 180px;
+  }
+  .titolo::after {
+    content: none;
+  }
+  .titolo::before {
+    content: none;
+  }
+  .menuContenitore {
+    display: block;
+  }
+  .menuFont {
+    font-size: 20px;
+  }
+  .sezText {
+    font-size: 40px;
+  }
+  .userImgDiv {
+    height: 150px;
+    width: 150px;
+  }
+  .benvenutoU {
+    font-size: 25px;
+    padding-top: 15px;
+  }
+  .mainContentDiv {
+    margin-top: -8%;
+  }
+  .infoCont {
+    background-color: none;
+    color: white;
+    padding-left: 16%;
+    padding-right: 16%;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 1rem;
+  }
+  .collegamenti {
+    display: none;
+  }
+  .menuIcon {
+    display: block;
+  }
+  #logo {
+    width: 200px;
+  }
+  .titolo::after {
+    content: none;
+  }
+  .titolo::before {
+    content: none;
+  }
+  .menuContenitore {
+    display: block;
+  }
+  .mainText {
+    font-size: 50px;
+  }
+  .semiText {
+    font-size: 15px;
+  }
+  .sezText {
+    font-size: 50px;
+  }
+  .userImgDiv {
+    height: 150px;
+    width: 150px;
+  }
+  .benvenutoU {
+    font-size: 30px;
+    padding-left: 30px;
+  }
+  .mainContentDiv {
+    margin-top: -8%;
+  }
+  .infoCont {
+    background-color: none;
+    color: white;
+    padding-left: 16%;
+    padding-right: 16%;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 1.1rem;
+  }
+  .collegamenti {
+    display: none;
+  }
+  .menuIcon {
+    display: block;
+  }
+  #logo {
+    width: 200px;
+  }
+  .titolo::after {
+    content: '';
+  }
+  .titolo::before {
+    content: '';
+  }
+  .menuContenitore {
+    display: none;
+  }
+  .mainText {
+    font-size: 60px;
+  }
+  .semiText {
+    font-size: 15px;
+  }
+  .sezText {
+    font-size: 60px;
+  }
+  .userImgDiv {
+    height: 200px;
+    width: 200px;
+  }
+  .benvenutoU {
+    font-size: 40px;
+    padding-left: 30px;
+  }
+  .mainContentDiv {
+    margin-top: -4%;
+  }
+  .infoCont {
+    background-color: none;
+    color: white;
+    padding-left: 16%;
+    padding-right: 16%;
+  }
+  .mainDiv {
+    padding-left: 16%;
+    padding-right: 16%;
+    width: 67%;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 1.2rem;
+  }
+  .collegamenti {
+    display: block;
+  }
+  .menuIcon {
+    display: none;
+  }
+  #logo {
+    width: 200px;
+  }
+  .titolo::after {
+    content: '';
+  }
+  .titolo::before {
+    content: '';
+  }
+  .menuContenitore {
+    display: none;
+  }
+  .sezText {
+    font-size: 60px;
+  }
+  .userImgDiv {
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+  }
+  .benvenutoU {
+    font-size: 50px;
+    padding-left: 30px;
+  }
+  .mainContentDiv {
+    margin-top: -3.5%;
+    padding: 40px 20px;
+  }
+  .infoCont {
+    background-color: none;
+    color: white;
+    padding-left: 16%;
+    padding-right: 16%;
+  }
+  .mainDiv {
+    padding-left: 16%;
+    padding-right: 16%;
+    width: 67%;
+  }
+}
+/*# sourceMappingURL=areaPersonale.css.map */

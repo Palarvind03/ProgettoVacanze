@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Poppins:ital,wght@0,400;1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c8963842c9.js" crossorigin="anonymous"></script>
+    <script src="./../js/CambioPagina.js"></script>
+    <link rel="stylesheet" href="./../css/contatti.css">
+    <title>Pal's Travels · Contatti</title>
+</head>
+<body onload="pageCaricata()">
+    <div class="container-flex starterBg" style="height: auto;position: relative;">
+        <nav class="navbar navbar-light bg-light" style="padding-left: 8%;padding-right: 8%;width: 100%;">
+            <a class="navbar-brand" href="./../index.html" style="width: 150px;padding-top: 20px;">
+                <img src="./img/t1logo.png" onclick="sessionStorage.setItem('statoPag','home')" alt="logo" id="logo" style="cursor: pointer;">
+            </a>
+            <div style="padding-top: 30px;">
+                <ul >
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(0)"></i>Home</a></li>
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(1)"></i>Chi siamo</a></li>
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(2)"></i>Galleria</a></li>
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(3)">Contatti</a></li>
+                    <div class="aPersonale">
+                        <li><a class="nav-item nav-link collegamenti d-none d-sm-none d-md-none d-lg-none d-xl-block" id="areaP" href="#" onclick="cambio(4)">Area Personale</a></li>
+                    </div>
+                    <div class="contenitoreAccedi">
+                        <a type="button" class="btn btn-outline-dark d-none d-sm-none d-md-none d-lg-none d-xl-inline-block ml-4 accedi" style="height: 30%;border-radius: 0;" href="./accedi.html">Accedi</a>
+                    </div>
+                </ul>   
+                <i class="fas fa-bars menuIcon" onclick="menu()"></i>
+            </div>
+        </nav>
+        <div class="d-flex align-items-center justify-content-center bg-dark menuContenitore" style="height: .5vh;width: 100%; overflow: hidden;;">
+            <div id="menuFont">
+                <div class="row-12 mb-4">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(0)"><i class="fas fa-home mr-2"></i> Home</a>
+                </div>  
+                <div class="row-12 mb-4">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(1)"><i class="fas fa-users mr-2"></i> Chi siamo</a>
+                </div> 
+                <div class="row-12 mb-4">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(2)"><i class="far fa-images mr-2"></i> Galleria</a>
+                </div> 
+                <div class="row-12 mb-5">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(3)"><i class="far fa-address-book mr-2"></i> Contatti</a>
+                </div> 
+                <div class="row-12">
+                    <div id="aPersonale">
+                        <a class="collegamentiMenu"  href="#" onclick="cambio(4)"><i class="far fa-user mr-2"></i> Area Personale</a>
+                    </div>
+                </div> 
+                <div id="contenitoreAccedi" class="w-100">
+                    <a type="button" class="btn btn-outline-light  w-100 accedi" href="./accedi.html">Accedi</a>
+                </div>
+            </div>       
+        </div>
+        <div class="contStyle" >
+            <div class="d-flex justify-content-center w-100 mb-4">
+                <div class="alert alert-danger" role="alert"></div>
+                <div class="alert alert-success" role="alert"></div>
+            </div>
+            <div class="contacts pt-4  pb-4 pl-3" data-aos="fade-up">
+                <div  id="mainContente">
+                    <div class="h4" id="ilViaggio" style=" font-family: 'Galada', cursive;">Contattaci...</div>
+                </div>
+                <div class="mb-0 mb-sm-0 mb-md-3 mb-lg-3 mb-xl-3 form">
+                    <input type="text" name="text" class="ip" autocomplete="off" required id="nome" />
+                    <label for="text" class="label-name">
+                        <span class="content-name">Nome</span>
+                    </label>
+                </div>
+                <div class="w-100"></div>
+                <div class="w-100"></div>
+                <div class="mb-0 mb-sm-0 mb-md-3 mb-lg-3 mb-xl-3 form">
+                    <input type="text" name="text" class="ip" autocomplete="off" required />
+                    <label for="text" class="label-name">
+                        <span class="content-name">Email</span>
+                    </label>
+                </div>
+                <div class="w-100"></div>
+                <div class="mb-0 mb-sm-0 mb-md-3 mb-lg-3 mb-xl-3 form">
+                    <input type="date" id="theDate"  name="text" class="ip"autocomplete="off" required />
+                    <label for="text" class="label-name">
+                        <span class="content-name"></span>
+                    </label>
+                </div>
+                <div>
+                    <div class="mb-2 mt-3 pr-3">
+                        <textarea class="form-control ip" id="exampleFormControlTextarea1" rows="4" style="resize: none;border-radius: none !important;" placeholder="Scrivici Qualcosa..."></textarea>
+                    </div>
+                </div>
+
+                <div class="w-100"></div>
+                <div class="d-flex align-items-center mb-2"></div>
+                    <i class="fas fa-male" style="cursor: pointer;font-size: 25px;" onclick="sesso('m')"></i>
+                    <i class="fas fa-female ml-4" style="cursor: pointer;font-size: 25px;" onclick="sesso('f')"></i>
+                    <input type="button" class="btn btn-warning mr-4" value="Invia!" style="float: right;" onclick="inviami()">
+                </div>
+            </div>
+            <div class="d-none d-sm-none d-md-none d-lg-block d-xl-block mainSvg" data-aos="fade-down-left" data-aos-delay="200">
+                <img src="./img/mobile_testing.svg" alt="mainSvg">
+            </div>
+        </div>
+        <footer class="page-footer font-small bg-dark">
+            <div class="footer-copyright text-center text-white py-3">© 2020 Copyright: Pal's Travels</div>
+      </footer>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./../js/Notifier.min.js"></script>
+    <script src="./../js/contatti.js"></script>
+</body>
+</html>

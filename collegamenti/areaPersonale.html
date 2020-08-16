@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pal's Travels · Home</title>
+    <script src="./../js/CambioPagina.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Poppins:ital,wght@0,400;1,200&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c8963842c9.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./../css/areaPersonale.css">
+</head>
+<body onload="pageCaricata()">
+
+    <div class="container-flex starterBg" style="height: auto;min-height: 100vh;">
+        <nav class="navbar navbar-light bg-light" style="padding-left: 8%;padding-right: 8%;width: 100%;">
+            <a class="navbar-brand" href="./../index.html" style="width: 150px;padding-top: 20px;">
+                <img src="./img/t1logo.png" onclick="sessionStorage.setItem('statoPag','home')" alt="logo" id="logo" style="cursor: pointer;">
+            </a>
+            <div style="padding-top: 30px;">
+                <ul >
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(0)"></i>Home</a></li>
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(1)"></i>Chi siamo</a></li>
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(2)"></i>Galleria</a></li>
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(3)">Contatti</a></li>
+                    <div class="aPersonale">
+                        <li><a class="nav-item nav-link collegamenti d-none d-sm-none d-md-none d-lg-none d-xl-block" id="areaP" href="#" onclick="cambio(4)">Area Personale</a></li>
+                    </div>
+                    <div class="contenitoreAccedi">
+                        <a type="button" class="btn btn-outline-dark d-none d-sm-none d-md-none d-lg-none d-xl-inline-block ml-4 accedi" style="height: 30%;border-radius: 0;" href="./accedi.html">Accedi</a>
+                    </div>
+                </ul>   
+                <i class="fas fa-bars menuIcon" onclick="menu()"></i>
+            </div>
+        </nav>
+        <div class="d-flex align-items-center justify-content-center bg-dark menuContenitore" style="height: .5vh;width: 100%; overflow: hidden;;">
+            <div id="menuFont">
+                <div class="row-12 mb-4">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(0)"><i class="fas fa-home mr-2"></i> Home</a>
+                </div>  
+                <div class="row-12 mb-4">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(1)"><i class="fas fa-users mr-2"></i> Chi siamo</a>
+                </div> 
+                <div class="row-12 mb-4">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(2)"><i class="far fa-images mr-2"></i> Galleria</a>
+                </div> 
+                <div class="row-12 mb-5">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(3)"><i class="far fa-address-book mr-2"></i> Contatti</a>
+                </div> 
+                <div class="row-12">
+                    <div id="aPersonale">
+                        <a class="collegamentiMenu"  href="#" onclick="cambio(4)"><i class="far fa-user mr-2"></i> Area Personale</a>
+                    </div>
+                </div> 
+                <div id="contenitoreAccedi" class="w-100">
+                    <a type="button" class="btn btn-outline-light  w-100 accedi" href="./accedi.html">Accedi</a>
+                </div>
+            </div>       
+        </div>
+        <div class="mainImgContainer backG" style="height: 50%;padding-left: 16%;padding-right: 16%;min-height: 400px;">
+            <div class="d-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start justify-content-xl-start align-items-center" style="height: 100%;">
+                <div>
+                    <div class="rounded-circle userImgDiv" data-aos="zoom-in" data-aos-delay="100"></div>
+                    <div class="d-flex justify-content-center align-items-center" style="flex-basis: 0%;max-width: 150px;text-align: center;">
+                        <b><div class="text-dark d-block d-sm-block d-md-none d-lg-none  d-xl-none benvenutoU" data-aos="fade-down" data-aos-delay="300"></div></b>
+                    </div>
+                </div>
+                <b><div class="text-dark d-none d-sm-none d-md-block d-lg-block d-xl-block benvenutoU" data-aos="fade-right" data-aos-delay="300"></div></b>
+            </div>
+        </div>
+        <div style="position: relative;" class="mainDiv">
+            <div class="bg-dark w-100  mainContentDiv" style="position: absolute;width: 67%;">
+                <div class="infoCont h-100">
+                    <div class="row h-50">
+                      <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 mb-5" ><b>Email</b></div>
+                      <div class="col infoUtente"></div>
+                      <div class="w-100"></div>
+                      <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 mb-5"><b>Sesso</b></div>
+                      <div class="col infoUtente"></div>
+                      <div class="w-100"></div> 
+                      <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 mb-5"><b>Numero Di Telefono</b></div>
+                      <div class="col infoUtente">
+                            <button type="button" class="btn btn-warning" onclick="settaNumero()">Imposta</button>
+                      </div>
+                      <button type="button" class="btn btn-warning modifica" onclick="modificaNumero()" style="height: fit-content;">Modifica</button>    
+                      <div class="w-100"></div>
+                      <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 mb-5"><b>Indirizzo</b></div>
+                      <div class="col infoUtente" style="width: auto;height: auto;">
+                        <button type="button" class="btn btn-warning" onclick="settaIndirizzo()">Imposta</button>
+                      </div>
+                      <button type="button" class="btn btn-warning modifica" onclick="modificaIndirizzo()" style="height: fit-content;">Modifica</button>
+                      <div class="w-100"></div>
+                      <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 mb-5"><b>Biglietti Aquistati</b></div>
+                      <div class="col infoUtente"></div>    
+                    </div>
+                </div>
+                <div class="w-100 d-flex justify-content-end ">
+                    <a href="./../index.html" class="btn btn-danger mb-3 mb-sm-3 mb-md-3 mb-lg-0 mb-xl-0 mt-0 mt-sm-0 mt-md-0 mt-lg-3 mt-xl-5" onclick="reqEsciAccount()">Esci</a>
+                </div>             
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./../js/Notifier.min.js"></script>
+    <script src="./../js/areaPersonale.js"></script>
+</body>
+</html>

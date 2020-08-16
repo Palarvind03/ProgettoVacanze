@@ -1,0 +1,255 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pal's Travels · Home</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/c8963842c9.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Poppins:ital,wght@0,400;1,200&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script src="./js/CambioPagina.js"></script>
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+<body onload="pageCaricata()">
+    <div class="container-flex starterBg" style="height: auto;min-height: 100vh;">
+        <nav class="navbar navbar-light bg-light" style="padding-left: 8%;padding-right: 8%;width: 100%;">
+            <a class="navbar-brand" href="./index.html" style="width: 150px;padding-top: 20px;">
+                <img src="./img/t1logo.png" alt="logo" id="logo" style="cursor: pointer;">
+            </a>
+            <div style="padding-top: 30px;">
+                <ul >
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(0)"></i>Home</a></li>
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(1)"></i>Chi siamo</a></li>
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(2)"></i>Galleria</a></li>
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(3)">Contatti</a></li>
+                    <div class="aPersonale">
+                        <li><a class="nav-item nav-link collegamenti d-none d-sm-none d-md-none d-lg-none d-xl-block" id="areaP" href="#" onclick="cambio(4)">Area Personale</a></li>
+                    </div>
+                    <div class="contenitoreAccedi">
+                        <a type="button" class="btn btn-outline-dark d-none d-sm-none d-md-none d-lg-none d-xl-inline-block ml-4 accedi" style="height: 30%;border-radius: 0;" href="./collegamenti/accedi.html">Accedi</a>
+                    </div>
+                </ul>   
+                <i class="fas fa-bars menuIcon" onclick="menu()"></i>
+            </div>
+        </nav>
+        <div class="d-flex align-items-center justify-content-center bg-dark menuContenitore" style="height: .5vh;width: 100%; overflow: hidden;;">
+            <div id="menuFont">
+                <div class="row-12 mb-4">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(0)"><i class="fas fa-home mr-2"></i> Home</a>
+                </div>  
+                <div class="row-12 mb-4">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(1)"><i class="fas fa-users mr-2"></i> Chi siamo</a>
+                </div> 
+                <div class="row-12 mb-4">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(2)"><i class="far fa-images mr-2"></i> Galleria</a>
+                </div> 
+                <div class="row-12 mb-5">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(3)"><i class="far fa-address-book mr-2"></i> Contatti</a>
+                </div> 
+                <div class="row-12">
+                    <div id="aPersonale">
+                        <a class="collegamentiMenu"  href="#" onclick="cambio(4)"><i class="far fa-user mr-2"></i> Area Personale</a>
+                    </div>
+                </div> 
+                <div id="contenitoreAccedi" class="w-100">
+                    <a type="button" class="btn btn-outline-light  w-100 accedi" href="./collegamenti/accedi.html" onclick="sessionStorage.setItem('statoPag','accedi')">Accedi</a>
+                </div>
+            </div>       
+        </div>
+        <div id="mainDiv" style="margin-left: 16%">
+            <div style="font-size: 2em;">
+                <div class="row-12">
+                    <div class="mainText"  >Pal's Travels</div> 
+                </div>
+                <div class="row-12">
+                    <div id="typed" ></div>
+                </div>
+            </div>
+            <div class="row twoBtn" style="margin-right: 16%;">
+                <a href="./collegamenti/esplora.html" class="esplora ml-3 mr-3" onclick="esplora()">Esplora</a> 
+                <a href="./collegamenti/registra.html" class="registra">Registrati</a>
+            </div>
+        </div>
+        <div class="h-25"></div>
+            <div class="d-flex justify-content-center">
+                <a href="#mainContente" class="d-flex align-items-end text-light mb-5">scorri</a>
+            </div>
+        </div>
+    </div> 
+    <div class="container-fluid mt-5" style="padding-left: 16%;padding-right: 16%;">
+        <div class="d-flex justify-content-center" id="mainContente">
+            <div class="h4 mb-5 mt-4 titolo" data-aos='fade-up'>Viaggia il mondo</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6" data-aos="fade-up-right" data-aos-delay="300">
+                <img src="./img/newDelhi.jpeg" alt="imgNewDelhi" id="cityImg1" >
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                <div class="row">
+                    <div class="col pt-2 nomeCitta" data-aos="fade-up-left" data-aos-delay="300"><b>Città Di Agra</b></div>
+                    <div class="col text-right" data-aos="fade-down" data-aos-delay="500"><img class="bandiera" src="./img/india.png" alt="bandieraIndia"></div>
+                    <div >
+                        <div class="col mt-3 paraImg text-justify" data-aos="fade-up-left" data-aos-delay="300">
+                            Agra è meta di visita da parte di milioni di turisti provenienti da tutto il mondo 
+                            che vi si recano per ammirare e per compiere un pellegrinaggio al , il mausoleo edificato dall'Imperatore Shāh Jahān 
+                            in devota memoria della moglie scomparsa Mumtaz Mahal...<br><br>
+
+                            Nel 1983 il  è stato dichiarato Patrimonio dell'umanità da parte dell'UNESCO.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 mb-5"></div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 d-none d-sm-none d-md-none d-lg-none d-xl-block">
+                <div class="row">
+                    <div class="col pt-2 nomeCitta" data-aos="fade-up-right" data-aos-delay="300"><b>Barcellona</b></div>
+                    <div class="col text-right" data-aos="fade-up" data-aos-delay="500"><img class="bandiera" src="./img/spain.png" alt="bandieraSpagna"></div>
+                    <div >
+                        <div class="col mt-3 text-justify  paraImg " data-aos="fade-up-right" data-aos-delay="300">
+                            Barcellona è una delle poche città al mondo che ha fatto della gioia di vivere il proprio tratto distintivo. 
+                            Colorata, bizzarra, trasgressiva, per anni è stata meta di turisti italiani interessati solo alla sua leggendaria vita notturna, 
+                            una delle più trascinanti ed elettrizzanti d’Europa.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6" data-aos="fade-up-left" data-aos-delay="300"><img  src="./img/barcelona.jpeg" alt="imgBarcelona" class="img-fluid cityImg" id="cityImg2"></div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 d-xl-none d-lg-block d-block d-sm-block d-md-block">
+                <div class="row">
+                    <div class="col pt-2 nomeCitta" data-aos="fade-up-right" data-aos-delay="300" ><b>Barcellona</b></div>
+                    <div class="col text-right" data-aos="fade-up" data-aos-delay="500"><img class="bandiera" src="./img/spain.png" alt="bandieraSpagna"></div>
+                    <div >
+                        <div class="col mt-3 text-justify paraImg" data-aos="fade-up-right" data-aos-delay="300">
+                            Barcellona è una delle poche città al mondo che ha fatto della gioia di vivere il proprio tratto distintivo. 
+                            Colorata, bizzarra, trasgressiva, per anni è stata meta di turisti italiani interessati solo alla sua leggendaria vita notturna, 
+                            una delle più trascinanti ed elettrizzanti d’Europa.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 mb-5"></div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6" data-aos="fade-up-right" data-aos-delay="300">
+                <img src="./img/newYork.jpeg" alt="imgNewYork" class="img-fluid cityImg" id="cityImg3">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                <div class="row">
+                    <div class="col pt-2 nomeCitta" data-aos="fade-up-left" data-aos-delay="300"><b>New York</b></div>
+                    <div class="col text-right" data-aos="fade-down" data-aos-delay="500"><img class="bandiera" src="./img/united-states.png" alt="bandieraUN"></div>
+                    <div >
+                        <div class="col mt-3 text-justify paraImg" data-aos="fade-up-left" data-aos-delay="300">
+                            Soprannominata la Grande Mela, New York, cosmopolita per eccellenza, anche questa resta 
+                            una delle mete turistiche più desiderate del mondo, un set che non smette mai di ispirare scrittori e registi. 
+                            New York raccoglie il meglio dell'arte, del design, dell'architettura e della musica di tutto il mondo.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center" style="margin-top: 50px;">
+            <div class="h4 mb-5 mt-5 titolo" data-aos='fade-up'>Estate è Qua</div>
+        </div>
+        <div style="position: relative;" class="d-flex align-items-center justify-content-center">
+            <div class="position-absolute">
+                <div class="row" data-aos='fade-up' data-aos-delay="100">
+                    <div class="col scontoText">Approfitta Dello Sconto D'estate</div>    
+                </div>
+                <div class="d-flex align-items-center justify-content-center" data-aos='zoom-in' data-aos-delay="200">
+                    <a  class="btnEstate m-3" href="./collegamenti/esplora.html" onclick="sessionStorage.setItem('statoPag','esplora')">D'accordo!</a>
+                </div>
+            </div>
+            <img src="./img/estate.jpeg" alt="estateimg" class="img-fluid">
+        </div>
+        <div class="d-flex justify-content-center" style="margin-top: 50px;">
+            <div class="h4 mb-5 mt-5 titolo" data-aos='fade-up'>Lavoriamo Con</div>
+        </div>
+        <div class="d-flex justify-content-center" style="margin-bottom: 150px;">
+            <div class="row">   
+                <div class="col" data-aos='zoom-in' data-aos-delay="100">
+                    <img src="./img/booking.png" alt="bookingLogo" class="img-fluid">
+                </div>
+                <div class="col" data-aos='zoom-in' data-aos-delay="150">
+                    <img src="./img/kayak.png" alt="kayakLogo" class="img-fluid" width="300px">
+                </div>
+                <div class="col" data-aos='zoom-in' data-aos-delay="200">
+                    <img src="./img/polaris.png" alt="polarisLogo" class="img-fluid mb-3" width="290px">
+                </div>
+            </div>
+        </div>
+    </div>
+<footer class="page-footer font-small blue-grey lighten-5">
+    <div style="background-color: #dfb55d;">
+      <div class="container">
+        <div class="row py-4 d-flex align-items-center">
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <h6 class="mb-0" style="color: white;">Supportaci registrando al sito!</h6>
+          </div>
+          <div class="col-md-6 col-lg-7 text-center text-md-right">
+            <li class="list-inline-item" data-aos='fade-left'>
+                <a href="./collegamenti/registra.html" class="btn btn-rounded" style="background-color: #333333;color: white;" onclick="sessionStorage.setItem('statoPag','registra')">Registra!</a>
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container text-center text-md-left mt-5">  
+      <div class="row mt-3 dark-grey-text">
+        <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+          <h6 class="text-uppercase font-weight-bold">Pal's Travel</h6>
+          <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p >La felicità non ha età,la felicità fa sentire giovani,fai emergere la  giovinezza che c'è in te rilassandoti e viaggiando con noi.</p>
+        </div>
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase font-weight-bold">Principali</h6>
+          <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a class="dark-grey-text" href="./collegamenti/chiSiamo.html" onclick="cambio(1)">ChiSiamo</a>
+          </p>
+          <p>
+            <a class="dark-grey-text" href="./collegamenti/galleria.html" onclick="cambio(2)">Galleria</a>
+          </p>
+          <p>
+            <a class="dark-grey-text" href="./collegamenti/contatti.html" onclick="cambio(3)">Contatti</a>
+          </p>
+          <p>
+            <a   id="accediFooter" onclick="accediFooter()">Accedi</a> 
+          </p> 
+        </div>
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase font-weight-bold">Link Utili</h6>
+          <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a   id="areaPersonaleFooter" onclick="areaPersonaleFooter()">Area Personale</a> 
+          </p>
+          <p>
+            <a class="dark-grey-text" href="./collegamenti/esplora.html" onclick="sessionStorage.setItem('statoPag','esplora')">Esplora</a>
+          </p>
+          <p>
+            <a class="dark-grey-text" href="./collegamenti/designedBy.html">designed By?</a>
+          </p>
+        </div>
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase font-weight-bold">Contataci</h6>
+          <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <i class="fas fa-home mr-3"></i> Itay, Piemonte</p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i>suppport.pt@gmail.com</p>
+          <p>
+            <i class="fas fa-phone mr-3"></i> + 39 234 567 88</p>
+          <p>
+            <i class="fas fa-print mr-3"></i> + 39 234 567 89</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright text-center text-black-50 py-3">© 2020 Copyright: pal's Travels</div>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    </script>
+  <script src="./js/home.js"></script>
+  <script src="./js/Notifier.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

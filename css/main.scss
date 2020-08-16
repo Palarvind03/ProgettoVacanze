@@ -1,0 +1,349 @@
+@import "bootstrap-4.0.0/scss/_functions.scss";
+@import "bootstrap-4.0.0/scss/_variables.scss";
+@import "bootstrap-4.0.0/scss/mixins/_breakpoints.scss";
+
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  outline: none;
+  cursor: default;
+}
+
+.mainImgContainer {
+  position: relative;
+  text-align: left;
+  color: white;
+}
+
+.mainTextDiv {
+  position: absolute;
+  bottom: 8px;
+  left: 16%;
+}
+
+.sezText{
+  font-size: 60px;
+  color: #333333;
+}
+
+ul { 
+  list-style: none; 
+  display: table;
+  text-align: center;
+}
+li { 
+  display: table-cell; 
+  position: relative; 
+}
+.collegamenti {
+  color: #333333;
+  text-decoration: none;
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+  &::after{
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #333333;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  &:hover::after{
+    width: 100%; 
+    left: 0; 
+  }
+}
+
+.aPersonale{
+  display: none;
+}
+
+#areaP{
+  margin-left: 30px;
+}
+
+.menuIcon{
+  font-size: 2rem;
+  padding-bottom: 40px;
+}
+
+.titolo{
+  position: relative;
+  transition: all 1s ease-in-out;
+  font-family: 'Galada', cursive;
+  &::after{
+      content:'';
+      width: 100px;
+      border: solid 1px;
+      position: absolute;
+      bottom: 15px;
+      right: -110px;
+  }
+  &::before{
+    content:'';
+    width: 100px;
+    border: solid 1px;
+    position: absolute;
+    bottom: 15px;
+    left: -110px;
+  }
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #dfb55d;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+.trovBage{
+  display: none;
+}
+
+.myFoot{
+  display: none;
+}
+
+.divErrore{
+  display: none;
+}
+
+.mainDiv {
+  display: none;
+}
+
+#animate-bottom {
+  position: relative;
+  animation-name: animatebottom;
+  animation-duration: .5s;
+  animation-timing-function: ease-in-out;
+}
+
+#animate-bottom1 {
+  position: relative;
+  animation-name: animatebottom;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-delay: .3s;
+  opacity: 0;
+}
+
+#animate-bottom2 {
+  position: relative;
+  animation-name: animatebottom;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+  animation-delay: .6s;
+  opacity: 0;
+  animation-timing-function: ease-in-out;
+}
+#animate-botto3 {
+  position: relative;
+  animation-name: animatebottom;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+  animation-delay: .9s;
+  opacity: 0;
+  animation-timing-function: ease-in-out;
+}
+
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.menuContenitore{
+    transition: all 1s ease-in-out;
+}
+
+.cardA{
+  display: none;
+}
+
+.cardAR{
+  display: none;
+}
+
+.tagOrdina{
+  &:hover{
+    color:#dfb55d;
+    cursor: pointer;
+  }
+}
+
+@include media-breakpoint-up(xs) {
+    html {
+      font-size: 0.8rem;
+    }
+    .collegamenti{
+      display: none;
+    }  
+    .menuIcon{
+      display: block;
+    }
+    #logo{
+      width: 150px;
+    }
+    .titolo{
+      &::after{
+        content: none;
+      }
+      &::before{
+        content: none;
+      }
+    }
+    .menuContenitore{
+      display: block;
+    }
+    .mainDiv{
+        padding-left: 0;
+        padding-right: 0;
+    }
+  }
+  
+  
+  @include media-breakpoint-up(sm) {
+    html {
+      font-size: 1rem;
+    }
+    .collegamenti{
+      display: none;
+    } 
+    .menuIcon{
+      display: block;
+    }
+    #logo{
+      width: 180px;
+    }
+    .titolo{
+      &::after{
+        content: none;
+      }
+      &::before{
+        content: none;
+      }
+    }
+    .menuContenitore{
+      display: block;
+    }
+    .mainDiv{
+        padding-left: 0;
+        padding-right: 0;
+    }
+  }
+  
+  @include media-breakpoint-up(md) {
+    html {
+      font-size: 1rem;
+    }
+    .collegamenti{
+      display: none;
+    }
+    .menuIcon{
+      display: block;
+    }
+    #logo{
+      width: 200px;
+    }
+    .titolo{
+      &::after{
+        content: none;
+      }
+      &::before{
+        content: none;
+      }
+    }
+    .menuContenitore{
+      display: block;
+    }
+    .mainDiv{
+        padding-left: 0;
+        padding-right: 0;
+    }
+  }
+  
+  @include media-breakpoint-up(lg) {
+    html {
+      font-size: 1.1rem;
+    }
+    .collegamenti{
+      display: none;
+    }
+    .menuIcon{
+      display: block;
+    }
+    #logo{
+      width: 200px;
+    }
+    .titolo{
+      &::after{
+        content: '';
+      }
+      &::before{
+        content: '';
+      }
+    }
+    .menuContenitore{
+      display: none;
+    }
+    .mainDiv{
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+  }
+  
+  @include media-breakpoint-up(xl) {
+    html {
+      font-size: 1.2rem;
+    }
+    .collegamenti{
+      display: block;
+    }
+    .menuIcon{
+      display: none;
+    }
+    #logo{
+      width: 200px;
+    }
+    .titolo{
+      &::after{
+        content: '';
+      }
+      &::before{
+        content: '';
+      }
+    }
+    .menuContenitore{
+      display: none;
+    }
+    .mainDiv{
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+  }

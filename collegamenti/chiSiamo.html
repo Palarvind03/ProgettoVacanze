@@ -1,0 +1,131 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Poppins:ital,wght@0,400;1,200&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c8963842c9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="./../js/CambioPagina.js"></script>
+    <link rel="stylesheet" href="./../css/chiSiamo.css">
+    <title>Pal's Travels · Chi siamo</title>
+</head>
+<body onload="pageCaricata()">
+    <div class="container-flex starterBg" style="height: auto;">
+        <nav class="navbar navbar-light bg-light" style="padding-left: 8%;padding-right: 8%;width: 100%;">
+            <a class="navbar-brand" href="./../index.html"  style="width: 150px;padding-top: 20px;">
+                <img src="./img/t1logo.png" onclick="sessionStorage.setItem('statoPag','home')" alt="logo" id="logo" style="cursor: pointer;">
+            </a>
+            <div style="padding-top: 30px;">
+                <ul >
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(0)"></i>Home</a></li>
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(1)"></i>Chi siamo</a></li>
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(2)"></i>Galleria</a></li>
+                    <li><a class="nav-item nav-link collegamenti"  href="#" onclick="cambio(3)">Contatti</a></li>
+                    <div class="aPersonale">
+                        <li><a class="nav-item nav-link collegamenti d-none d-sm-none d-md-none d-lg-none d-xl-block" id="areaP" href="#" onclick="cambio(4)">Area Personale</a></li>
+                    </div>
+                    <div class="contenitoreAccedi">
+                        <a type="button" class="btn btn-outline-dark d-none d-sm-none d-md-none d-lg-none d-xl-inline-block ml-4 accedi" style="height: 30%;border-radius: 0;" href="./accedi.html">Accedi</a>
+                    </div>
+                </ul>   
+                <i class="fas fa-bars menuIcon" onclick="menu()"></i>
+            </div>
+        </nav>
+        <div class="d-flex align-items-center justify-content-center bg-dark menuContenitore" style="height: .5vh;width: 100%; overflow: hidden;;">
+            <div id="menuFont">
+                <div class="row-12 mb-4">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(0)"><i class="fas fa-home mr-2"></i> Home</a>
+                </div>  
+                <div class="row-12 mb-4">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(1)"><i class="fas fa-users mr-2"></i> Chi siamo</a>
+                </div> 
+                <div class="row-12 mb-4">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(2)"><i class="far fa-images mr-2"></i> Galleria</a>
+                </div> 
+                <div class="row-12 mb-5">
+                    <a class="collegamentiMenu"  href="#" onclick="cambio(3)"><i class="far fa-address-book mr-2"></i> Contatti</a>
+                </div> 
+                <div class="row-12">
+                    <div id="aPersonale">
+                        <a class="collegamentiMenu"  href="#" onclick="cambio(4)"><i class="far fa-user mr-2"></i> Area Personale</a>
+                    </div>
+                </div> 
+                <div id="contenitoreAccedi" class="w-100">
+                    <a type="button" class="btn btn-outline-light w-100  accedi" href="./accedi.html">Accedi</a>
+                </div>
+            </div>       
+        </div>
+        <div class="mainImgContainer backG" >
+            <img src="./img/team2.png" alt="BgImage" width="100%" style="opacity: 0.5;filter: blur(1px);">
+            <div class="mainTextDiv" style="margin-left: auto;">
+                <div class="row-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class=" sezText" style="font-family: 'Galada', cursive;">Chi Siamo...</div>
+                </div>
+                <div class="w-100"></div>
+                <div class="row">
+                    <div class="d-none d-sm-none d-md-none d-lg-block d-xl-block  col-lg-7 col-xl-5 text-justify text-light mb-5" data-aos="fade-down" data-aos-delay="400">
+                        Siamo i tuoi consulenti di viaggio Ogni giorno immaginiamo 
+                        e organizziamo itinerari, soggiorni, trasferimenti. 
+                        E' la nostra passione e la nostra professione.
+                    </div>
+                </div>
+                <div class="w-100"></div>
+                <div class="row-8">
+                    <a href="#ilViaggio" class="d-none d-sm-none d-md-none d-lg-none d-xl-block col-lg-2 col-xl-2 mb-3 mainBtn" data-aos="zoom-in" data-aos-delay="600">Leggi di più</a>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <div style="padding-left: 16%;padding-right: 16%;">
+        <div class="d-flex justify-content-center" id="mainContente">
+            <div class="h4 mb-5 mt-4 titolo" id="ilViaggio" data-aos="fade-up">Il Viaggio</div>
+        </div>
+        <div class="text-justify text-center">
+            Che si tratti del "Viaggio della tua vita", di un viaggio di lavoro o di un breve stacco 
+            per riposarsi e rigenerarsi, la nostra esperienza ci consente di selezionare le proposte 
+            che possono realizzare il viaggio proprio come te lo eri immaginato (e anche meglio). 
+        </div>
+        <div class="row mt-5 mb-5">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                <div class="d-flex justify-content-center align-items-center" id="mainContente">
+                    <div class="h4 mb-5 mt-4 titolo" id="ilViaggio" style="margin-left: 10%;" data-aos="fade-up">A Noi Piace Viaggiare</div>
+                </div>
+                <div class="text-justify text-center align-items-center">
+                    Che si tratti del "Viaggio della tua vita", di un viaggio di lavoro o di un breve stacco 
+                    per riposarsi e rigenerarsi, la nostra esperienza ci consente di selezionare le proposte 
+                    che possono realizzare il viaggio proprio come te lo eri immaginato (e anche meglio). 
+                </div>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+                <img src="./img/travel.svg" alt="travel" class="img-fluid d-none d-sm-none d-md-none d-lg-block d-xl-block" width="200px">
+            </div>
+        </div>
+        <div class="d-flex justify-content-center" id="mainContente">
+            <div class="h4 mb-5 mt-4 titolo" id="ilViaggio" data-aos="fade-up">Sapersi Orientare</div>
+        </div>
+        <div class="text-justify text-center">s
+            Non è facile orientarsi, navigare e scegliere nel mare di offerte. 
+            Noi lo facciamo ogni giorno, potendo contare anche sulla forza del 
+            nostro network (Bravo Net, oltre 1.000 agenzia in Italia) e sull'affidabilità di 
+            fornitori selezionati (anche attraverso le valutazioni dei nostri clienti).
+        </div>
+        <div class="mt-5" style="height: 20px;"></div>
+        <div class="d-flex justify-content-center" id="mainContente">
+            <div class="h4 mb-5 mt-4 titolo" id="ilViaggio" data-aos="fade-up">Dove Siamo</div>
+        </div>
+        <div class="row border h-50" id="map">
+
+        </div>
+    </div>
+    <footer class="page-footer font-small bg-dark mt-5">
+        <div class="footer-copyright text-center text-white py-3">© 2020 Copyright: Pal's Travels</div>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    </script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+</body>
+</html>

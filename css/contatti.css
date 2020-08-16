@@ -1,0 +1,394 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  outline: none;
+  cursor: default;
+}
+
+.alert-success, .alert-danger {
+  display: none;
+}
+
+#areaP {
+  margin-left: 30px;
+}
+
+ul {
+  list-style: none;
+  display: table;
+  text-align: center;
+}
+
+li {
+  display: table-cell;
+  position: relative;
+}
+
+.collegamenti {
+  color: #333333;
+  text-decoration: none;
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.collegamenti::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #333333;
+  -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.collegamenti:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.menuIcon {
+  font-size: 2rem;
+  padding-bottom: 40px;
+}
+
+.titolo {
+  position: relative;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.titolo::after {
+  content: '';
+  width: 100px;
+  border: solid 1px;
+  position: absolute;
+  bottom: 15px;
+  right: -110px;
+}
+
+.titolo::before {
+  content: '';
+  width: 100px;
+  border: solid 1px;
+  position: absolute;
+  bottom: 15px;
+  left: -110px;
+}
+
+.menuContenitore {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.form {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+  width: 95%;
+  background-color: white;
+}
+
+.form input {
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  border: none;
+  cursor: text;
+}
+
+.form label {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #333333;
+}
+
+.form label::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-bottom: 3px solid #fce38a;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.content-name {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding-bottom: 5px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.form input:focus {
+  outline: none;
+}
+
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name {
+  -webkit-transform: translateY(-160%);
+          transform: translateY(-160%);
+  font-size: 14px;
+  left: 0px;
+  color: #dfb55d;
+}
+
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.contacts {
+  border-left: solid 1px #333333;
+  border-bottom: solid 1px #333333;
+  background-color: white;
+  border-bottom-left-radius: 25px;
+}
+
+.contStyle {
+  width: 100%;
+  padding-left: 16%;
+  padding-right: 16%;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#d16ba5), color-stop(#c777b9), color-stop(#ba83ca), color-stop(#aa8fd8), color-stop(#9a9ae1), color-stop(#8aa7ec), color-stop(#79b3f4), color-stop(#69bff8), color-stop(#52cffe), color-stop(#41dfff), color-stop(#46eefa), to(#5ffbf1));
+  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  overflow: visible;
+  -webkit-clip-path: polygon(0 0, 91% 0, 70% 100%, 0 100%);
+          clip-path: polygon(0 0, 91% 0, 70% 100%, 0 100%);
+  min-height: 90vh;
+}
+
+.aPersonale {
+  display: none;
+}
+
+.mainSvg {
+  position: absolute;
+}
+
+html {
+  font-size: 1rem;
+}
+
+html {
+  font-size: 0.8rem;
+}
+
+.collegamenti {
+  display: none;
+}
+
+.menuIcon {
+  display: block;
+}
+
+#logo {
+  width: 150px;
+}
+
+.titolo::after {
+  content: none;
+}
+
+.titolo::before {
+  content: none;
+}
+
+.menuContenitore {
+  display: block;
+}
+
+#menuFont {
+  font-size: 15px;
+}
+
+.divStyle {
+  height: 600px;
+  width: 600px;
+}
+
+.contacts {
+  width: 100%;
+}
+
+.contStyle {
+  -webkit-clip-path: none;
+          clip-path: none;
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: 1rem;
+  }
+  .collegamenti {
+    display: none;
+  }
+  .menuIcon {
+    display: block;
+  }
+  #logo {
+    width: 180px;
+  }
+  .titolo::after {
+    content: none;
+  }
+  .titolo::before {
+    content: none;
+  }
+  .menuContenitore {
+    display: block;
+  }
+  #menuFont {
+    font-size: 20px;
+  }
+  .divStyle {
+    height: 300px;
+    width: 300px;
+  }
+  .contacts {
+    width: 100%;
+  }
+  .contStyle {
+    -webkit-clip-path: none;
+            clip-path: none;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 1rem;
+  }
+  .collegamenti {
+    display: none;
+  }
+  .menuIcon {
+    display: block;
+  }
+  #logo {
+    width: 200px;
+  }
+  .titolo::after {
+    content: none;
+  }
+  .titolo::before {
+    content: none;
+  }
+  .menuContenitore {
+    display: block;
+  }
+  #menuFont {
+    font-size: 25px;
+  }
+  .divStyle {
+    height: 600px;
+    width: 600px;
+  }
+  .contacts {
+    width: 100%;
+  }
+  .contStyle {
+    -webkit-clip-path: none;
+            clip-path: none;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 1.2rem;
+  }
+  .collegamenti {
+    display: none;
+  }
+  .menuIcon {
+    display: block;
+  }
+  #logo {
+    width: 200px;
+  }
+  .titolo::after {
+    content: '';
+  }
+  .titolo::before {
+    content: '';
+  }
+  .menuContenitore {
+    display: none;
+  }
+  .divStyle {
+    height: 900px;
+    width: 900px;
+  }
+  .contacts {
+    width: 50%;
+  }
+  .contStyle {
+    -webkit-clip-path: polygon(0 0, 91% 0, 70% 100%, 0 100%);
+            clip-path: polygon(0 0, 91% 0, 70% 100%, 0 100%);
+  }
+  .mainSvg {
+    right: 0px;
+    height: 500px;
+    width: 500px;
+    bottom: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 1.2rem;
+  }
+  .collegamenti {
+    display: block;
+  }
+  .menuIcon {
+    display: none;
+  }
+  #logo {
+    width: 200px;
+  }
+  .titolo::after {
+    content: '';
+  }
+  .titolo::before {
+    content: '';
+  }
+  .menuContenitore {
+    display: none;
+  }
+  .divStyle {
+    height: 900px;
+    width: 900px;
+  }
+  .contacts {
+    width: 40%;
+  }
+  .contStyle {
+    -webkit-clip-path: polygon(0 0, 91% 0, 70% 100%, 0 100%);
+            clip-path: polygon(0 0, 91% 0, 70% 100%, 0 100%);
+  }
+  .mainSvg {
+    right: 100px;
+    height: 500px;
+    width: 500px;
+    bottom: 150px;
+  }
+}
+/*# sourceMappingURL=contatti.css.map */
