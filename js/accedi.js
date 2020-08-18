@@ -1,4 +1,5 @@
 contaImg=0
+
 function correggoEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
@@ -48,6 +49,7 @@ function AccediMi(){
                             notifier.notify("error", "Password non coincide con email inserito!");
                         }else{
                             sessionStorage.setItem("accessoAlert","true")
+	         sessionStorage.setItem("statoPag","home")	
                             accediBtn.setAttribute("href","./../index.html")
                             numU = i
                             localStorage.setItem("utenteLoggato", numU)
@@ -81,3 +83,7 @@ function AccediMi(){
 
     }
 }
+
+function preventBack(){window.history.forward();}
+ setTimeout("preventBack()", 0);
+ window.onunload=function(){null;};
